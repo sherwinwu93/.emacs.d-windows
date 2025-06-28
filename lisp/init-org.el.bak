@@ -1,0 +1,110 @@
+
+;; ----------------------------------------agenda
+(use-package org
+  :init (setq org-agenda-files '("~/notes/todos/")) 
+  :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)
+				     (flyspell-mode)))
+  :bind (("C-c a" . org-agenda)
+	 ("C-c c" . org-capture)
+	 :map org-mode-map
+	 ("C-c r" . org-refile)
+	 ("C-c t" . org-todo)
+	 ("M-l" . awesome-tab-forward-tab)
+	 ("M-h" . awesome-tab-backward-tab)
+	 ("M-\\". awesome-tab-kill-other-buffers-in-current-group)
+	 ("<tab>" . insert-two-spaces)
+	 )
+  )
+(evil-leader/set-key
+  "<tab>" 'org-cycle
+  "aa" 'org-agenda
+  "ac" 'org-capture
+  "ar" 'org-refile
+  "at" 'org-ctrl-c-ctrl-c
+  )
+
+;; (use-package org-contrib
+;;  :pin nongnu
+;;  :ensure t
+;;  )
+
+
+;; ----------------------------------------priority & tags & TODO
+;; 优先级
+(setq org-agenda-custom-commands
+      '(
+        ("w" . "任务安排")
+        ("wa" "重要且紧急的任务" tags-todo "+PRIORITY=\"A\"")
+        ("wb" "重要且不紧急的任务" tags-todo "+PRIORITY=\"B\"")
+        ("wc" "不重要且紧急的任务" tags-todo "+PRIORITY=\"C\"")
+        ("W" "Weekly Review"
+	 ;; 尚未进行管理的任务
+         ((stuck "") ;; review stuck projects as designated by org-stuck-projects
+	  ;; 标签
+          (tags-todo "daily")
+          (tags-todo "weekly")
+          (tags-todo "monthly")
+          (tags-todo "school")
+          (tags-todo "code")
+          (tags-todo "family")
+          ))
+        ))
+;; @/!: 同时使用
+(setq org-todo-keywords
+      '(
+	(sequence "TODO(t!)" "DOING(g!)" "|" "DONE(d!)" "CANCELED(c @/!)")
+	(sequence "OUT(o!)"  "IN(i @/!)")
+	))
+;; ----------------------------------------capture
+;; 绑定键位
+
+;; 这边就是为路径赋值
+(defvar org-agenda-dir "" "gtd org files location")
+(setq-default org-agenda-dir "~/notes/todos/")
+
+(setq org-agenda-file-note (expand-file-name "notes.org" org-agenda-dir))
+(setq org-agenda-file-task (expand-file-name "task.org" org-agenda-dir))
+(setq org-agenda-file-calendar (expand-file-name "calendar.org" org-agenda-dir))
+(setq org-agenda-file-finished (expand-file-name "finished.org" org-agenda-dir))
+(setq org-agenda-file-canceled (expand-file-name "canceled.org" org-agenda-dir))
+(setq org-agenda-file-finance (expand-file-name "finance.org" org-agenda-dir))
+
+;; --------------------templates
+(setq org-capture-templates
+      '(
+        ("t" "Todo_work" entry (file+headline org-agenda-file-task "Work")
+         "* TODO [#B] %?\n  %i\n"
+         :empty-lines 1)
+        ("l" "Todo_learning" entry (file+headline org-agenda-file-task "Learning")
+         "* TODO [#B] %?\n  %i\n"
+         :empty-lines 1)
+        ("h" "Todo_hobbies" entry (file+headline org-agenda-file-task "Hobbies")
+         "* TODO [#C] %?\n  %i\n"
+         :empty-lines 1)
+        ("o" "Todo_others" entry (file+headline org-agenda-file-task "Others")
+         "* TODO [#C] %?\n  %i\n"
+         :empty-lines 1)
+        ("n" "notes" entry (file+headline org-agenda-file-note "Quick notes")
+         "* %?\n  %i\n %U"
+         :empty-lines 1)
+        ("i" "ideas" entry (file+headline org-agenda-file-note "Quick ideas")
+         "* %?\n  %i\n %U"
+         :empty-lines 1)
+        ("f" "finance" entry (file+headline org-agenda-file-finance "Quick finance")
+         "* | | |%i|"
+         :empty-lines 1)
+        )
+      )
+;; --------------------refile
+(setq org-refile-targets '(
+			   ;;修复bug,不可删除
+			   (nil :maxlevel . 1)
+			   (org-agenda-file-note :maxlevel . 1)
+			   (org-agenda-file-task :maxlevel . 1)
+			   (org-agenda-file-calendar :maxlevel . 1)
+			   (org-agenda-file-finished :maxlevel . 1)
+			   (org-agenda-file-canceled :maxlevel . 1)
+			   ))
+
+
+;;(provide 'init-org)

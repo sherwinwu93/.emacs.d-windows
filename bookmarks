@@ -1,0 +1,48 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("nce3"
+ (filename . "c:/Users/sherwinwu/Codes/notes/")
+ (front-context-string . "Z-index.org\n  -r")
+ (rear-context-string . " 3 Mar 17 09:14 ")
+ (position . 2275))
+("Burly: w"
+ (url . "emacs+burly+windows:?%28%28%28min-height%20.%204%29%20%28min-width%20.%2010%29%20%28min-height-ignore%20.%203%29%20%28min-width-ignore%20.%204%29%20%28min-height-safe%20.%201%29%20%28min-width-safe%20.%202%29%20%28min-pixel-height%20.%2072%29%20%28min-pixel-width%20.%2090%29%20%28min-pixel-height-ignore%20.%2054%29%20%28min-pixel-width-ignore%20.%2036%29%20%28min-pixel-height-safe%20.%2018%29%20%28min-pixel-width-safe%20.%2018%29%29%20leaf%20%28pixel-width%20.%201920%29%20%28pixel-height%20.%20999%29%20%28total-width%20.%20213%29%20%28total-height%20.%2055%29%20%28normal-height%20.%201.0%29%20%28normal-width%20.%201.0%29%20%28parameters%20%28burly-url%20.%20%22emacs%2Bburly%2Bbookmark%3A%2F%2F.gitignore%3Ffilename%3D%2522~%252Fnotes%252F.gitignore%2522%26front-context-string%3Dnil%26rear-context-string%3D%2522de_modules%250Adist%250A%2522%26position%3D19%26defaults%3D%2528%2522.gitignore%2522%2529%22%29%29%20%28buffer%20%22.gitignore%22%20%28selected%20.%20t%29%20%28hscroll%20.%200%29%20%28fringes%208%208%20nil%20nil%29%20%28margins%20nil%29%20%28scroll-bars%20nil%200%20t%20nil%200%20t%20nil%29%20%28vscroll%20.%200%29%20%28dedicated%29%20%28point%20.%2019%29%20%28start%20.%201%29%29%20%28prev-buffers%20%28%22%2Adashboard%2A%22%201%20425%29%20%28%22burly.el%22%201%201315%29%20%28%22%2Ascratch%2A%22%201%201%29%29%29")
+ (handler . burly-bookmark-handler))
+("org-capture-last-stored-marker"
+ (filename . "~/notes/todos/inbox.org")
+ (front-context-string . "** TODO [#A] 学数学")
+ (rear-context-string . "2022-08-25 Thu>\n")
+ (position . 93))
+("org-capture-last-stored"
+ (filename . "/mnt/webdav/org/inbox.org")
+ (front-context-string . "** TODO [#B] 231")
+ (rear-context-string . "2023-04-11 Tue>\n")
+ (position . 1190))
+("org-refile-last-stored"
+ (filename . "/mnt/webdav/org/inbox.org")
+ (front-context-string . "** DONE [#B] 推荐码")
+ (rear-context-string . "2023-07-19 Wed>\n")
+ (position . 13626))
+("nce2"
+ (filename . "~/notes/nce2/")
+ (front-context-string . "0.NCE2.md\n  -rwx")
+ (rear-context-string . "10 8月  13 00:26 ")
+ (position . 164))
+("todos"
+ (filename . "~/notes/todos/")
+ (front-context-string . "0106.md\n  drwxrw")
+ (rear-context-string . "41 8月  13 00:26 ")
+ (position . 164))
+(".emacs.d"
+ (filename . "~/.emacs.d/")
+ (front-context-string)
+ (rear-context-string . "e-bookmarks.eld\n")
+ (position . 645))
+("notes"
+ (filename . "~/notes/")
+ (front-context-string . "  /root/notes:\n ")
+ (rear-context-string)
+ (position . 1))
+)

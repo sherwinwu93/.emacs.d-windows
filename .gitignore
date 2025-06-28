@@ -1,0 +1,21 @@
+// 忽略文件夹
+temp-dir
+elpa
+rime
+auto-save-list
+transient
+url
+// 忽略文件
+temp.json
+recentf
+*~
+amx-items
+#*#
+.emacs.desktop*
+// 忽略文件夹下所有目录
+temp/*
+elpa/*
+// 忽略文件夹下某个文件类型
+temp/*.css
+/projectile-bookmarks.eld
+// bookmarks
