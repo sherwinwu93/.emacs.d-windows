@@ -110,7 +110,7 @@
   "s" '(:wk "search")
   "ss" 'swiper
   "sr" 'query-replace
-  "sp" 'counsel-projectile-grep)
+  "sp" 'counsel-ag)
 (general-def
   "s-f"  'swiper
   "s-r" 'query-replace

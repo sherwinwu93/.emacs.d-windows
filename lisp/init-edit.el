@@ -103,6 +103,6 @@
   (interactive)
   (find-file "~/.emacs.d/abbrev_defs"))
 ;; ----------------------------------------Flyspell
-(flyspell-mode t)
+;; (flyspell-mode t)
 
 (provide 'init-edit)
